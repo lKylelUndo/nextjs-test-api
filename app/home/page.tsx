@@ -1,11 +1,17 @@
 import React from "react";
 import Button from "./Button";
 
+export async function getTodos() {
+  const res = await fetch("https://dummyjson.com/todos");
+  const data = await res.json();
+  return data;
+}
+
 async function page() {
-  const res = await fetch("http://localhost:3000/api/todos", {
-    method: "GET",
-  });
-  console.log(await res.json());
+//   const res = await fetch("http://localhost:3000/api/todos", {
+//     method: "GET",
+//   });
+//   console.log(await res.json());
   return (
     <div>
       <Button />
